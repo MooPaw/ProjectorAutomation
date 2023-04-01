@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProjectorAutomation/ProjectorAutomation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectorAutomation/Preview Content\"";
 				DEVELOPMENT_TEAM = A98J2G67S6;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -456,7 +456,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = ProjectorAutomation/ProjectorAutomation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ProjectorAutomation/Preview Content\"";
 				DEVELOPMENT_TEAM = A98J2G67S6;
 				ENABLE_HARDENED_RUNTIME = YES;

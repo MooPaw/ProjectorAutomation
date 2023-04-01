@@ -14,20 +14,18 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("Projector Automation")
-            if #available(iOS 15.0, *) {
-                VStack {
-                    resetCache()
-                    refreshPlan()
-                    projectorHelp()
-                }
-                .buttonStyle(.bordered)
-            } else {
-                VStack {
-                    resetCache()
-                    refreshPlan()
-                    projectorHelp()
-                }
+            VStack(spacing: 20) {
+                Divider()
+                refreshPlan()
+                Divider()
+                slideLogo()
+                slideBlack()
+                slidePrevious()
+                slideNext()
+                Divider()
+                projectorHelp()
             }
+            .buttonStyle(.automatic)
         }
         .padding()
     }
@@ -36,22 +34,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-    }
-}
-
-struct resetCache: View {
-    @Environment(\.openURL) private var openURL
-
-    var body: some View {
-        Button {
-            let url = URL (string: "projector://reset/cache")!
-            if(UIApplication.shared.canOpenURL(url)) {
-                UIApplication.shared.open(url)
-            }
-            
-        } label: {
-            Label("Reset Cache", systemImage: "digitalcrown.press")
-        }
     }
 }
 
@@ -67,6 +49,62 @@ struct refreshPlan: View {
 
         } label: {
             Label("Refresh Plan", systemImage: "arrow.clockwise.circle")
+        }
+    }
+}
+
+struct slideLogo: View {
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        Button {
+            if let url = URL(string: "projector://slide/logo") {
+                openURL(url)
+            }
+        } label: {
+            Label("Logo Slide", systemImage: "apple.logo")
+        }
+    }
+}
+
+struct slideBlack: View {
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        Button {
+            if let url = URL(string: "projector://slide/black") {
+                openURL(url)
+            }
+        } label: {
+            Label("Black Slide", systemImage: "square.fill")
+        }
+    }
+}
+
+struct slidePrevious: View {
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        Button {
+            if let url = URL(string: "projector://slide/previous") {
+                openURL(url)
+            }
+        } label: {
+            Label("Previous Slide", systemImage: "arrow.backward.circle")
+        }
+    }
+}
+
+struct slideNext: View {
+    @Environment(\.openURL) private var openURL
+
+    var body: some View {
+        Button {
+            if let url = URL(string: "projector://slide/next") {
+                openURL(url)
+            }
+        } label: {
+            Label("Next Slide", systemImage: "arrow.right.circle")
         }
     }
 }
